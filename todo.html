@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #button {
+    border-radius: 4px;
+    background-color: rgb(184, 179, 245);
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  #button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  
+  #button:hover span {
+    padding-right: 25px;
+    background-color: #f41e1e;
+  }
+
+    </style>
+</head>
+<body>
+ 
+<button id="button" onclick="myfunc1() "><span>Add</span></button>
+<button id="button" onclick="myfunc()"><span>Remove</span></button>
+<ol id="mylist1"></ol>
+<script>
+
+function myfunc1() {             //to add elements through button//
+    let title= document.createElement('li');
+    let mytitle =prompt("Enter the Name");
+    let btn=document.createElement('button');
+    title.textContent=mytitle;
+    title.style.color="blue";
+    title.style.fontSize="25px";
+    title.style.fontFamily="Algerian";
+    document.getElementById("mylist1").appendChild(title);
+// document.body.appendChild(btn).innerHTML="x";    
+} 
+
+
+function myfunc(){   //to remove elements through button//
+    let list= document.getElementById('mylist1')
+    list.removeChild(list.firstElementChild);
+} 
+</script>
+
+
+</body>
+</html>
